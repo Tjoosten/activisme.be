@@ -16,12 +16,27 @@ class Authencation extends MY_Controller
     {
         parent::__construct();
 
-        $this->load->helper(['url']);
         $this->load->library(['session', 'blade', 'form_validation']);
+        $this->load->helper(['url']);
 
         $this->user        = $this->session->userdata('user');
         $this->abilities   = $this->session->userdata('abilities');
         $this->permissions = $this->session->userdata('permissions');
+    }
+
+    /**
+     * Return the list of middlewares you want to be applied,
+     * Here is list of some valid options
+     *
+     * admin_auth                    // As used below, simplest, will be applied to all
+     * someother|except:index,list   // This will be only applied to posts()
+     * yet_another_one|only:index    // This will be only applied to index()
+     *
+     * @return array
+     */
+    protected function middleware()
+    {
+        return [];
     }
 
     /**
@@ -33,7 +48,7 @@ class Authencation extends MY_Controller
     public function index()
     {
         $data['title'] = 'Login';
-        return $this->blade->render('', $data);
+        return $this->blade->render('auth/login', $data);
     }
 
     /**
