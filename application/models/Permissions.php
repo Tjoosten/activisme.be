@@ -9,7 +9,7 @@ class Permissions extends Model
      *
      * @return string
      */
-    protected $table = '';
+    protected $table = 'permissions';
 
     /**
      * Mass-assign fields.

@@ -13,7 +13,7 @@ class Abilities extends Model
      * The database table name
      *
      */
-    protected $table = '';
+    protected $table = 'abilities';
 
     /**
      * Mass assign fields.

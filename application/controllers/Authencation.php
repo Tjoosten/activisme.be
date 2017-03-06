@@ -59,17 +59,76 @@ class Authencation extends MY_Controller
      */
     public function verify()
     {
-        //
+        $this->form_validation->set_rules('email', 'email', 'trim|required');
+        $this->form_validation->set_rules('password', 'wachtwoord', 'trim|required|callback_check_database');
+
+        if ($this->form_validation->run() === false) { // Validation >>> fails
+            $data['title'] = 'Inloggen';
+
+            $this->session->set_flashdata('class', 'alert alert-danger');
+            $this->session->set_flashdata('message', 'De gebruikersnaam en het wachtwoord die je hebt ingevoerd komen niet overeen met ons archief. Controleer de gegevens en probeer het opnieuw.');
+
+            return $this->blade->render('auth/login', $data);
+        }
+
+        return redirect($_SERVER['HTTP_REFERER']);
     }
 
     /**
      * [INTERNAL]: Check the given credentials against the database.
      *
+     * @param  string $password   The user given password.
      * @return bool
      */
-    public function check_database()
+    public function check_database($password)
     {
-        //
+        // BUG: MD5 is insecure. Replace it with a better hashing.
+
+        $input['email'] = $this->security->xss_clean($this->input->post('email'));
+        $MySQL['user']  = Authencate::where('email', $input['email'])
+            ->with(['permissions', 'abilities'])
+            ->where('blocked', 'N')
+            ->where('password', md5($password));
+
+        if ($MySQL['user']->count() === 1) {
+            $authencation = []; // Empty userdata array .
+            $permissions  = []; // Empty permissions array.
+            $abilities    = []; // Empty abilities array.
+
+            foreach ($MySQL['user']->get() as $user) {
+                if (in_array('Admin', (array) $user->permissions) || in_array('Developer', (array) $user->permissions)) {
+                    foreach ($user->permissions as $permission) {
+                        array_push($permissions, $permission->name);
+                    }
+
+                    foreach ($user->abilities as $ability) {
+                        array_push($abilities, $ability->name);
+                    }
+
+                    $authencation['id']         = $user->id;
+                    $authencation['name']       = $user->name;
+                    $authencation['email']      = $user->email;
+                    $authencation['username']   = $user->username;
+
+                    $this->session->set_userdata('user', $authencation);
+                    $this->session->set_userdata('permissions', $permissions);
+                    $this->session->set_userdata('abilities', $abilities);
+
+                    return true;
+                } else {
+                    $this->session->set_flashdata('class', 'alert alert-danger');
+                    $this->session->set_flashdata('message', 'U hebt geen rechten om hier in te loggen');
+                }
+            }
+        } else {
+            $this->session->set_flashdata('class', 'alert alert-danger');
+            $this->session->set_flashdata('message', 'Wrong credentials given.');
+
+            $this->form_validation->set_message('check_database', 'Foutieve login gegevens.');
+
+            return false;
+        }
+
     }
 
     /**

@@ -82,24 +82,33 @@
 
 		<div class="aitsresumewthree" id="aitsresumewthree">
 			<div class="container">
+                @if (! empty($this->session->flashdata('class')) && ! empty($this->session->flashdata('message')))
+                    <div class="{{ $this->session->flashdata('class') }} alert-dismissable fade in" role="alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        {{ $this->session->flashdata('message') }}
+                    </div>
+                @endif
+
 				<h3>Log In</h3>
 				<p></p>
 
 				<div align="center">
-					<table width="300" border="0">
-						<tr>
-							<td>Email :</td>
-							<td><input type="email" placeholder="Email" required="" name="Email"></td>
-						</tr>
-						<tr>
-							<td>Paswoord :</td>
-							<td><input type="password" placeholder="Password" name="Password"></td>
-						</tr>
-						<tr>
-							<td>Log In</td>
-							<td><input type="submit" value="Login"></td>
-						</tr>
-					</table>
+					<form class="" action="{{ base_url('authencation/verify') }}" method="post">
+                        <table width="300" border="0">
+    						<tr>
+    							<td>Email :</td>
+    							<td><input type="email" name="email" placeholder="Email" required="" name="Email"></td>
+    						</tr>
+    						<tr>
+    							<td>Paswoord :</td>
+    							<td><input type="password" name="password" placeholder="Password" name="Password"></td>
+    						</tr>
+    						<tr>
+    							<td>Log In</td>
+    							<td><input type="submit" value="Login"></td>
+    						</tr>
+    					</table>
+					</form>
 				</div>
 			</div>
 		</div>
