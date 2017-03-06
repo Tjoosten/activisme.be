@@ -42,8 +42,8 @@ class Authencation extends MY_Controller
     /**
      * Get the login view.
      *
-     * @url:see()
-     * @return
+     * @url:see('GET|HEAD', 'http://www.activisme.be/authencation')
+     * @return Blade view
      */
     public function index()
     {
@@ -54,8 +54,8 @@ class Authencation extends MY_Controller
     /**
      * Verify the given user against the database.
      *
-     * @see:url()
-     * @return
+     * @see:url('POST', 'http://www.activisme.be/authencation/verify')
+     * @return Blade view | Response
      */
     public function verify()
     {
@@ -71,7 +71,7 @@ class Authencation extends MY_Controller
             return $this->blade->render('auth/login', $data);
         }
 
-        return redirect($_SERVER['HTTP_REFERER']);
+        return redirect(base_url('backend'));
     }
 
     /**
@@ -113,12 +113,12 @@ class Authencation extends MY_Controller
                     $this->session->set_userdata('user', $authencation);
                     $this->session->set_userdata('permissions', $permissions);
                     $this->session->set_userdata('abilities', $abilities);
-
-                    return true;
                 } else {
                     $this->session->set_flashdata('class', 'alert alert-danger');
                     $this->session->set_flashdata('message', 'U hebt geen rechten om hier in te loggen');
                 }
+
+                return true;
             }
         } else {
             $this->session->set_flashdata('class', 'alert alert-danger');
@@ -154,7 +154,7 @@ class Authencation extends MY_Controller
         $this->form_validation->set_rules();
 
         if ($this->form_validation->run() === false) { // Validation >>> fails
-            $data['title'] = 'Login';
+            $data['title'] = 'Registreer je account.';
 
             return $this->blade->render('', $data);
         }

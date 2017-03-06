@@ -43,6 +43,18 @@ class Manifest extends MY_Controller
     }
 
     /**
+     * Manifestation backend overview.
+     *
+     * @see:url('GET|HEAD', 'http://www.activisme.be/manifest')
+     * @return Blade view
+     */
+    public function index()
+    {
+        $data['title'] = 'Activiteiten';
+        return $this->blade->render('', $data);
+    }
+
+    /**
      * Store a manifestation in the database.
      *
      * @see:url('POST', 'http://www.activisme.be/manifest/store')
