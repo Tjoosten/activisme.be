@@ -8,6 +8,18 @@ class Actions extends MY_Controller
 
     public function __construct()
     {
-        parent::__constrcut();
+        parent::__construct();
+
+        $this->load->helper();
+        $this->load->library();
+
+        $this->user = $this->session->userdata();
+        $this->abilities = $this->session->userdata();
+        $this->permissions = $this->session->userdata();
+    }
+
+    public function store()
+    {
+        
     }
 }
