@@ -28,6 +28,33 @@ class Manifest extends MY_Controller
     }
 
     /**
+     * Return the list of middlewares you want to be applied,
+     * Here is list of some valid options
+     *
+     * admin_auth                    // As used below, simplest, will be applied to all
+     * someother|except:index,list   // This will be only applied to posts()
+     * yet_another_one|only:index    // This will be only applied to index()
+     *
+     * @return array
+     */
+    protected function middleware()
+    {
+        return [];
+    }
+
+    /**
+     * Manifestation backend overview.
+     *
+     * @see:url('GET|HEAD', 'http://www.activisme.be/manifest')
+     * @return Blade view
+     */
+    public function index()
+    {
+        $data['title'] = 'Activiteiten';
+        return $this->blade->render('', $data);
+    }
+
+    /**
      * Store a manifestation in the database.
      *
      * @see:url('POST', 'http://www.activisme.be/manifest/store')
@@ -57,11 +84,36 @@ class Manifest extends MY_Controller
         return redirect($_SERVER['HTTP_REFERER']);
     }
 
+    /**
+     * Update a manfestation in the database.
+     *
+     * @see:url('POST', 'http://www.activisme.be/manifest/update/{manifestId}')
+     * @return Redirect|Response
+     */
     public function update()
     {
-        $this->form_validation->set_rules();
-        $this->form_validation->set_rules();
-        
+        $this->form_validation->set_rules('name', 'Naam', 'trim|required');
+        $this->form_validation->set_rules('web_address', 'Web adres', 'trim|required');
+
+        $manifestId = $this->security->xss_clean($this->uri->segment(3));
+
+        if ($this->form_validation->run() === false) { // Validation >>> fails
+            $this->session->set_flashdata('class', 'alert alert-danger');
+            $this->session->set_flashdata('message', 'Wij konden de manifestie niet updaten');
+
+            return redirect($_SERVER['HTTP_REFERER']);
+        }
+
+        // No validation errors found. Move on with the logic.
+        $input['name']        = $this->input->post('name');
+        $input['web_address'] = $this->input->post('web_address');
+
+        if (Manifestation::find($manifestId)->update($this->security->xss_clean($input))) { // Record >>> updated
+            $this->session->set_flashdata('class', 'alert alert-success');
+            $this->session->set_flashdata('message', 'De manifestatie is aangepast.');
+        }
+
+        return redirect($_SERVER['HTTP_REFERER']);
     }
 
     /**

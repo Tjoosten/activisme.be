@@ -1,5 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+use Illuminate\Database\Eloquent\Model;
+
 class Authencate extends Model
 {
     /**
@@ -17,24 +19,23 @@ class Authencate extends Model
     protected $fillable = ['', ''];
 
     /**
-     * Permissions for the given user.
+     * User permissions data relation
      *
-     * @return Collection|QueryBuilder
+     * @return BelongsToMany instance
      */
     public function permissions()
     {
-        return $this->belongsToMany('Permissions', '', '', '')
+        return $this->belongsToMany('Permissions', 'login_permissions', 'login_id', 'permission_id')
             ->withTimestamps();
     }
-
     /**
-     * Abilities relation for the given user.
+     * User abilities data relation.
      *
-     * @return Collection|QueryBuilder
+     * @return BelongsToMany instance
      */
     public function abilities()
     {
-        return $this->belongsToMany('Abilities', '', '', '')
-            ->withTimestamps();
+        return $this->belongsToMany('Abilities', 'login_abilities', 'login_id', 'ability_id')
+            ->withTimeStamps();
     }
 }

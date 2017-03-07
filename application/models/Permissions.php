@@ -1,5 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+use Illuminate\Database\Eloquent\Model;
+
 class Permissions extends Model
 {
     /**
@@ -7,7 +9,7 @@ class Permissions extends Model
      *
      * @return string
      */
-    protected $table = '';
+    protected $table = 'permissions';
 
     /**
      * Mass-assign fields.

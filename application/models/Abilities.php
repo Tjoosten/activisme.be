@@ -1,5 +1,8 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
+
+use Illuminate\Database\Eloquent\Model;
+
 /**
  *
  *
@@ -10,7 +13,7 @@ class Abilities extends Model
      * The database table name
      *
      */
-    protected $table = '';
+    protected $table = 'abilities';
 
     /**
      * Mass assign fields.
