@@ -94,18 +94,18 @@
 
 				<div align="center">
 					<form class="" action="{{ base_url('authencation/verify') }}" method="post">
-                        <table width="300" border="0">
+                        <table width="375" border="0">
     						<tr>
-    							<td>Email :</td>
-    							<td><input type="email" name="email" placeholder="Email" required="" name="Email"></td>
+    							<td>Email: <span class="text-danger">*</span></td>
+    							<td><input style="margin-bottom: 5px;" type="email" class="form-control" name="email" placeholder="Email" name="Email"></td>
     						</tr>
     						<tr>
-    							<td>Paswoord :</td>
-    							<td><input type="password" name="password" placeholder="Password" name="Password"></td>
+    							<td>Wachtwoord: <span class="text-danger">*</span></td>
+    							<td><input style="margin-bottom: 5px;"  class="form-control" type="password" name="password" placeholder="Password" name="Password"></td>
     						</tr>
     						<tr>
-    							<td>Log In</td>
-    							<td><input type="submit" value="Login"></td>
+    							<td></td>
+    							<td><input type="submit" class="btn btn-sm btn-success" value="Login"></td>
     						</tr>
     					</table>
 					</form>
