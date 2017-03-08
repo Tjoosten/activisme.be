@@ -132,13 +132,15 @@ class Authencation extends MY_Controller
     }
 
     /**
-     * @see:url()
-     * @return
+     * Register view for a user.
+     *
+     * @see:url('GET|HEAD', 'http://www.activisme.be/authencation/register')
+     * @return Blade view
      */
     public function register()
     {
         $data['title'] = 'Registreer je account.';
-        return $this->blade->render('', $data);
+        return $this->blade->render('auth/register', $data);
     }
 
     /**
@@ -149,9 +151,10 @@ class Authencation extends MY_Controller
      */
     public function store()
     {
-        $this->form_validation->set_rules();
-        $this->form_validation->set_rules();
-        $this->form_validation->set_rules();
+        $this->form_validation->set_rules('name', '', '', '');
+        $this->form_validation->set_rules('username', '', '', '');
+        $this->form_validation->set_rules('email', '', '', '');
+        $this->form_validation->set_rules('password', '', '' ,'');
 
         if ($this->form_validation->run() === false) { // Validation >>> fails
             $data['title'] = 'Registreer je account.';
