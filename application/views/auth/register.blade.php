@@ -62,6 +62,18 @@
 								</div>
 							</div>
 						</div>
+                        <div class="col-md-2 nav-grid nav-grid5">
+                            <div class="ch-item ch-img-5">
+                                <div class="ch-info-wrap">
+                                    <div class="ch-info">
+                                        <div class="ch-info-front ch-img-1"><i class="fa fa-home" aria-hidden="true"></i></div>
+                                        <div class="ch-info-back">
+                                            <h3><a class="scroll" href="{{ base_url('backend') }}">Backend</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 						<div class="col-md-2 nav-grid nav-grid6">
 							<div class="ch-item ch-img-6">
 								<div class="ch-info-wrap">
@@ -84,31 +96,35 @@
 				<h3>Registreer U</h3>
 				<p></p>
 
+                <div class="alert alert-info" role="alert">
+                    <p>Hier kunt u een login aanmaken die zal gebruikt doorheen onze platformen.</p>
+                </div>
+
 				<div align="center">
-					<table width="300" border="0">
+					<table width="500" border="0">
 						<tr>
-							<td>Naam :</td>
-							<td><input type="text" placeholder="Name" name="Name"></td>
+							<td>Naam:</td>
+							<td><input style="margin-bottom: 5px;" type="text" class="form-control" placeholder="Name" name="name"></td>
 						</tr>
 						<tr>
-							<td>Gebruikersnaam :</td>
-							<td><input type="text" placeholder="Gebruikersnaam" name="Username"></td>
+							<td>Gebruikersnaam:</td>
+							<td><input style="margin-bottom: 5px;" type="text" class="form-control" placeholder="Gebruikersnaam" name="username"></td>
 						</tr>
 						<tr>
-							<td>E-mail :</td>
-							<td><input type="email" placeholder="Email" required="" name="Email"></td>
+							<td>E-mail:</td>
+							<td><input style="margin-bottom: 5px;" type="email" class="form-control" placeholder="Email" required="" name="email"></td>
 						</tr>
 						<tr>
-							<td>Paswoord :</td>
-							<td><input type="password" placeholder="Password" name="Password"></td>
+							<td>Paswoord:</td>
+							<td><input style="margin-bottom: 5px;" type="password" class="form-control" placeholder="Password" name="password"></td>
 						</tr>
 						<tr>
-							<td>Bestig paswoord :</td>
-							<td><input type="password" placeholder="Confirm Password" name="Password"></td>
+							<td>Bevestig paswoord:</td>
+							<td><input style="margin-bottom: 5px;" type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation"></td>
 						</tr>
 						<tr>
-							<td>Registreer</td>
-							<td><input type="submit" value="Register Now"></td>
+							<td></td>
+							<td><input type="submit" class="btn btn-sm btn-success" value="Registreer"></td>
 						</tr>
 					</table>
 				</div>
@@ -121,25 +137,25 @@
 			<div class="container">
 
 				<div class="copyright slideanim">
-					<p>&copy; 2017 Activisme.be. All Rights Reserved </p>
+					<p>&copy; {{ date('Y') }} Activisme.be. Alle rechten voorbehouden </p>
 				</div>
 			</div>
 		</div>
 
         <a href="#" id="toTop" class="stuoyal3w stieliga" style="display: block;"> <span id="toTopHover" style="opacity: 0;"> </span></a>
 
-		<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
-	    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="assets/js/jquery.filterizr.js"></script>
-        <script type="text/javascript" src="assets/js/controls.js"></script>
-        <script type="text/javascript" src="assets/js/easyResponsiveTabs.js"></script>
-        <script type="text/javascript" src="assets/js/waypoints.min.js"></script>
-        <script type="text/javascript" src="assets.js/counterup.min.js"></script>
-        <script type="text/javascript" src="assets/js/bars.js"></script>
-        <script type="text/javascript" src="assets/js/move-top.js"></script>
-        <script type="text/javascript" src="assets/js/easing.js"></script>
-        <script type="text/javascript" src="assets/js/jquery.chocolat.js"></script>
-        <script type="text/javascript" src="assets/js/owl.carousel.js"></script>
-        <script type="text/javascript" src="assets/js/register.js"></script>
+		<script type="text/javascript" src="{{ base_url('assets/js/jquery-2.1.4.min.js') }}"></script>
+	    <script type="text/javascript" src="{{ base_url('assets/js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ base_url('assets/js/jquery.filterizr.js') }}"></script>
+        <script type="text/javascript" src="{{ base_url('assets/js/controls.js') }}"></script>
+        <script type="text/javascript" src="{{ base_url('assets/js/easyResponsiveTabs.js') }}"></script>
+        <script type="text/javascript" src="{{ base_url('assets/js/waypoints.min.js') }}"></script>
+        <script type="text/javascript" src="{{ base_url('assets/js/counterup.min.js') }}"></script>
+        <script type="text/javascript" src="{{ base_url('assets/js/bars.js') }}"></script>
+        <script type="text/javascript" src="{{ base_url('assets/js/move-top.js') }}"></script>
+        <script type="text/javascript" src="{{ base_url('assets/js/easing.js') }}"></script>
+        <script type="text/javascript" src="{{ base_url('assets/js/jquery.chocolat.js') }}"></script>
+        <script type="text/javascript" src="{{ base_url('assets/js/owl.carousel.js') }}"></script>
+        <script type="text/javascript" src="{{ base_url('assets/js/register.js') }}"></script>
     </body>
 </html>

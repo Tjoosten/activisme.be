@@ -90,21 +90,21 @@ class Authencation extends MY_Controller
             ->where('blocked', 'N')
             ->where('password', md5($password));
 
-        if ($MySQL['user']->count() === 1) {
+        if ((int) $MySQL['user']->count() === 1) {
             $authencation = []; // Empty userdata array .
             $permissions  = []; // Empty permissions array.
             $abilities    = []; // Empty abilities array.
 
             foreach ($MySQL['user']->get() as $user) {
-                if (in_array('Admin', (array) $user->permissions) || in_array('Developer', (array) $user->permissions)) {
-                    foreach ($user->permissions as $permission) {
-                        array_push($permissions, $permission->name);
-                    }
+                foreach ($user->permissions as $permission) {
+                    array_push($permissions, $permission->name);
+                }
 
-                    foreach ($user->abilities as $ability) {
-                        array_push($abilities, $ability->name);
-                    }
+                foreach ($user->abilities as $ability) {
+                    array_push($abilities, $ability->name);
+                }
 
+                if (in_array('Admin', $permissions) || in_array('Developer', $permissions)) {
                     $authencation['id']         = $user->id;
                     $authencation['name']       = $user->name;
                     $authencation['email']      = $user->email;
@@ -113,12 +113,14 @@ class Authencation extends MY_Controller
                     $this->session->set_userdata('user', $authencation);
                     $this->session->set_userdata('permissions', $permissions);
                     $this->session->set_userdata('abilities', $abilities);
+
+                    return true;
                 } else {
                     $this->session->set_flashdata('class', 'alert alert-danger');
                     $this->session->set_flashdata('message', 'U hebt geen rechten om hier in te loggen');
-                }
 
-                return true;
+                    return false;
+                }
             }
         } else {
             $this->session->set_flashdata('class', 'alert alert-danger');
@@ -151,16 +153,24 @@ class Authencation extends MY_Controller
      */
     public function store()
     {
-        $this->form_validation->set_rules('name', '', '', '');
-        $this->form_validation->set_rules('username', '', '', '');
-        $this->form_validation->set_rules('email', '', '', '');
-        $this->form_validation->set_rules('password', '', '' ,'');
+        $this->form_validation->set_rules('name', 'Naam', 'trim|required');
+        $this->form_validation->set_rules('username', 'Gebruikersnaam', 'trim|required|is_unique[users.username]');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[users.email]');
+        $this->form_validation->set_rules('password', 'Wachtwoord' ,'trim|required|matches[password]');
+        $this->form_validation->set_rules('password_confirmation', 'Wachtwoord bevestiging', 'trim|required');
 
         if ($this->form_validation->run() === false) { // Validation >>> fails
             $data['title'] = 'Registreer je account.';
 
-            return $this->blade->render('', $data);
+            return $this->blade->render('auth/register', $data);
         }
+
+        // No validation errors. SO move on with our logic.
+
+        $input['name']     = $this->input->post('name');
+        $input['username'] = $this->input->post('username');
+        $input['email']    = $this->input->post('email');
+        $input['password'] = md5($this->input->post('password'));
 
         if (Authencate::store($this->security->xss_clean($input))) {
             $this->session->set_flashdata('class', 'alert-success');

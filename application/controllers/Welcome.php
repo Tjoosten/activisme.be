@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * Welcome controller. 
+ * Welcome controller.
  */
 class Welcome extends CI_Controller
 {
@@ -18,7 +18,7 @@ class Welcome extends CI_Controller
     {
         parent::__construct();
         $this->load->helper(['url']);
-        $this->load->library(['form_validation', 'session']);
+        $this->load->library(['form_validation', 'Blade', 'session']);
 
         $this->user        = $this->session->userdata('user');
         $this->permissions = $this->session->userdata('permissions');
@@ -36,6 +36,6 @@ class Welcome extends CI_Controller
 		$data['title'] = 'Index';
 		$data['news']  = Article::take(4)->get();
 
-		$this->load->view('index', $data);
+		$this->blade->render('index', $data);
 	}
 }

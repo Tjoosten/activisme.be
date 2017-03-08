@@ -15,17 +15,23 @@ class Backend extends MY_Controller
     {
         parent::__construct();
 
-        $this->load->helper();
-        $this->load->library();
+        $this->load->helper(['url']);
+        $this->load->library(['form_validation', 'blade', 'session']);
 
         $this->user        = $this->session->userdata('user');
         $this->abilities   = $this->session->userdata('abilities');
         $this->permissions = $this->session->userdata('permissions');
     }
 
+    /**
+     * Home index view.
+     *
+     * @see:url('GET|HEAD', 'http://www.activisme.be/backend')
+     * @return blade view.
+     */
     public function index()
     {
         $data['title'] = 'Home';
-        return $this->blade->render('', $data);
+        return $this->blade->render('backend/index', $data);
     }
 }
