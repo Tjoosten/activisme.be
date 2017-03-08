@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="378e3f48-03dc-4deb-88d4-b5b01100f381" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/index.blade.php" afterPath="$PROJECT_DIR$/application/views/index.blade.php" />
-    </list>
+    <list default="true" id="378e3f48-03dc-4deb-88d4-b5b01100f381" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -46,10 +42,9 @@
         <entry file="file://$PROJECT_DIR$/application/views/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="692">
-              <caret line="295" column="4" lean-forward="false" selection-start-line="295" selection-start-column="4" selection-end-line="295" selection-end-column="4" />
+              <caret line="299" column="4" lean-forward="false" selection-start-line="299" selection-start-column="4" selection-end-line="299" selection-end-column="4" />
               <folding>
-                <marker date="1489009683743" expanded="true" signature="1513:3126" ph="..." />
-                <marker date="1489009683743" expanded="true" signature="3209:4965" ph="..." />
+                <marker date="1489010222531" expanded="true" signature="1513:2101" ph="..." />
               </folding>
             </state>
           </provider>
@@ -87,8 +82,8 @@
         <option value="$PROJECT_DIR$/assets/css/style.css" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/application/views/auth/register.blade.php" />
-        <option value="$PROJECT_DIR$/application/views/index.blade.php" />
         <option value="$PROJECT_DIR$/assets/js/index.js" />
+        <option value="$PROJECT_DIR$/application/views/index.blade.php" />
       </list>
     </option>
   </component>
@@ -300,12 +295,12 @@
       <workItem from="1488826694725" duration="981000" />
       <workItem from="1488972028009" duration="1537000" />
       <workItem from="1489006188713" duration="1921000" />
-      <workItem from="1489008140657" duration="1568000" />
+      <workItem from="1489008140657" duration="2119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7847000" />
+    <option name="totallyTimeSpent" value="8398000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -363,8 +358,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1489009683743" expanded="true" signature="1513:3126" ph="..." />
-            <marker date="1489009683743" expanded="true" signature="3209:4965" ph="..." />
+            <marker date="1489010222531" expanded="true" signature="1513:2101" ph="..." />
           </folding>
         </state>
       </provider>
@@ -430,10 +424,9 @@
     <entry file="file://$PROJECT_DIR$/application/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="692">
-          <caret line="295" column="4" lean-forward="false" selection-start-line="295" selection-start-column="4" selection-end-line="295" selection-end-column="4" />
+          <caret line="299" column="4" lean-forward="false" selection-start-line="299" selection-start-column="4" selection-end-line="299" selection-end-column="4" />
           <folding>
-            <marker date="1489009683743" expanded="true" signature="1513:3126" ph="..." />
-            <marker date="1489009683743" expanded="true" signature="3209:4965" ph="..." />
+            <marker date="1489010222531" expanded="true" signature="1513:2101" ph="..." />
           </folding>
         </state>
       </provider>

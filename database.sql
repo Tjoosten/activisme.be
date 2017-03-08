@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.1.14-MariaDB, for osx10.11 (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.54, for Win64 (AMD64)
 --
--- Host: localhost    Database: activisme_be_petition
+-- Host: localhost    Database: activisme_be2
 -- ------------------------------------------------------
--- Server version	5.6.27
+-- Server version	5.5.5-10.1.20-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -40,6 +40,36 @@ CREATE TABLE `abilities` (
 LOCK TABLES `abilities` WRITE;
 /*!40000 ALTER TABLE `abilities` DISABLE KEYS */;
 /*!40000 ALTER TABLE `abilities` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `articles`
+--
+
+DROP TABLE IF EXISTS `articles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `articles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `author_id` int(11) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `message` text,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_author_article` (`author_id`),
+  CONSTRAINT `FK_author_article` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `articles`
+--
+
+LOCK TABLES `articles` WRITE;
+/*!40000 ALTER TABLE `articles` DISABLE KEYS */;
+/*!40000 ALTER TABLE `articles` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -316,7 +346,7 @@ CREATE TABLE `login_permissions` (
   KEY `FK_user_permission` (`login_id`),
   CONSTRAINT `FK_permission_user` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`),
   CONSTRAINT `FK_user_permission` FOREIGN KEY (`login_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -325,6 +355,7 @@ CREATE TABLE `login_permissions` (
 
 LOCK TABLES `login_permissions` WRITE;
 /*!40000 ALTER TABLE `login_permissions` DISABLE KEYS */;
+INSERT INTO `login_permissions` VALUES (1,1,2,NULL,NULL);
 /*!40000 ALTER TABLE `login_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -526,7 +557,7 @@ CREATE TABLE `sessions` (
 
 LOCK TABLES `sessions` WRITE;
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
-INSERT INTO `sessions` VALUES ('0a8siv5va7vdqbb99o775ivgau1qraqe','::1',1488534139,'__ci_last_regenerate|i:1488534127;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('1mhl71g7c0v0r0ugesc6vh2ucchbs0r1','::1',1488529954,'__ci_last_regenerate|i:1488529703;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('5d8f3j95vdinpjc79i628tfa7htqe4rt','::1',1488520151,'__ci_last_regenerate|i:1488519880;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('5n99q258s22ljl7keq2trch3crjrjo4h','::1',1488525581,'__ci_last_regenerate|i:1488525306;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('cijsiuulfi4054spqc8gl4jh7v26ndem','::1',1488526317,'__ci_last_regenerate|i:1488526295;'),('e54ohh4pvvcrn2n91jjr2ah8v0fcu5ps','::1',1488525873,'__ci_last_regenerate|i:1488525734;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('fsfg7f7fhrcqnpja619l59h9a43su6pn','::1',1488530322,'__ci_last_regenerate|i:1488530039;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('g42jp311sb7mc0492ikj86ohhltm2aoa','::1',1488521169,'__ci_last_regenerate|i:1488520890;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('ggsgeikcjfdmqn7g3g1uf2lt2eajuifn','::1',1488525678,'__ci_last_regenerate|i:1488525601;'),('i9phhaguji5rqph9nepb4dkd5pd8hv47','::1',1488520858,'__ci_last_regenerate|i:1488520573;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('is4sdnhhco2lktj69vjs0eah2iv3itid','::1',1488518906,'__ci_last_regenerate|i:1488518724;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('nfn0edmdo3kou3vusao15spe4g99v8aa','::1',1488519793,'__ci_last_regenerate|i:1488519532;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('r6ae2m4umvpuq6i2fguearhbvabjfqbo','::1',1488520212,'__ci_last_regenerate|i:1488520212;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('rd2tb7j5itokdhu6bu8t3ifdk8se4rn4','::1',1488533811,'__ci_last_regenerate|i:1488533618;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('scnouji14kc37cpjsedi10upaqf956bs','::1',1488533318,'__ci_last_regenerate|i:1488533147;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('v3h6uhlgjf5qbv3i0o40jc8cjvuubdu2','::1',1488519511,'__ci_last_regenerate|i:1488519227;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}');
+INSERT INTO `sessions` VALUES ('0a8siv5va7vdqbb99o775ivgau1qraqe','::1',1488534139,'__ci_last_regenerate|i:1488534127;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('1mhl71g7c0v0r0ugesc6vh2ucchbs0r1','::1',1488529954,'__ci_last_regenerate|i:1488529703;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('5d8f3j95vdinpjc79i628tfa7htqe4rt','::1',1488520151,'__ci_last_regenerate|i:1488519880;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('5n99q258s22ljl7keq2trch3crjrjo4h','::1',1488525581,'__ci_last_regenerate|i:1488525306;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('7nan618hl47s3kg0v3jpt557smk8tjk8','::1',1489005557,'__ci_last_regenerate|i:1489005283;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:1:{i:0;s:5:\"Admin\";}abilities|a:0:{}'),('8l0lldbf509ep970jo9jrme1tn6t56e8','::1',1489005861,'__ci_last_regenerate|i:1489005837;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:1:{i:0;s:5:\"Admin\";}abilities|a:0:{}'),('akq6n65jao7k4s7i7na5uf0vu4ock6br','::1',1488994901,'__ci_last_regenerate|i:1488994603;'),('c4j0cp3jtq1mjsk1ib4l8vddve11r83n','::1',1489010185,'__ci_last_regenerate|i:1489010185;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:1:{i:0;s:5:\"Admin\";}abilities|a:0:{}'),('cijsiuulfi4054spqc8gl4jh7v26ndem','::1',1488526317,'__ci_last_regenerate|i:1488526295;'),('d8j9lon1j750v6l4c3pf8j2k9mi7aodl','::1',1489004901,'__ci_last_regenerate|i:1489004624;'),('e54ohh4pvvcrn2n91jjr2ah8v0fcu5ps','::1',1488525873,'__ci_last_regenerate|i:1488525734;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('flshiivj3nu3me0t67pue1unb11uthlu','::1',1489010551,'__ci_last_regenerate|i:1489010545;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:1:{i:0;s:5:\"Admin\";}abilities|a:0:{}'),('fsfg7f7fhrcqnpja619l59h9a43su6pn','::1',1488530322,'__ci_last_regenerate|i:1488530039;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('g42jp311sb7mc0492ikj86ohhltm2aoa','::1',1488521169,'__ci_last_regenerate|i:1488520890;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('ggsgeikcjfdmqn7g3g1uf2lt2eajuifn','::1',1488525678,'__ci_last_regenerate|i:1488525601;'),('hkfmu38f4svh7dmfgf4krdht5aik60pu','::1',1489004275,'__ci_last_regenerate|i:1489004003;'),('hl78shf7ea3h5svrvg3k7jd4um5l4a63','::1',1488993156,'__ci_last_regenerate|i:1488993014;'),('i9phhaguji5rqph9nepb4dkd5pd8hv47','::1',1488520858,'__ci_last_regenerate|i:1488520573;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('is4sdnhhco2lktj69vjs0eah2iv3itid','::1',1488518906,'__ci_last_regenerate|i:1488518724;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('iuvfuiuvb0ohtt1ff81k1o9k5lioab47','::1',1488995943,'__ci_last_regenerate|i:1488995907;'),('klse8ouhofd9fg0fekm4gl6e050vb81t','::1',1489005139,'__ci_last_regenerate|i:1489004935;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:1:{i:0;s:5:\"Admin\";}abilities|a:0:{}'),('nfn0edmdo3kou3vusao15spe4g99v8aa','::1',1488519793,'__ci_last_regenerate|i:1488519532;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('p1r3t4atfdmlvql7f248drtdc62ocu07','::1',1488995813,'__ci_last_regenerate|i:1488995582;'),('r6ae2m4umvpuq6i2fguearhbvabjfqbo','::1',1488520212,'__ci_last_regenerate|i:1488520212;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('rd2tb7j5itokdhu6bu8t3ifdk8se4rn4','::1',1488533811,'__ci_last_regenerate|i:1488533618;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('scnouji14kc37cpjsedi10upaqf956bs','::1',1488533318,'__ci_last_regenerate|i:1488533147;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}'),('t5s0ajq0q24d6tsepoif5611ruv18k4l','::1',1488991288,'__ci_last_regenerate|i:1488991287;'),('tis580lc3d6va8smoqoinnjkufjbkss0','::1',1489004566,'__ci_last_regenerate|i:1489004320;class|s:18:\"alert alert-danger\";__ci_vars|a:2:{s:5:\"class\";s:3:\"new\";s:7:\"message\";s:3:\"new\";}message|s:140:\"De gebruikersnaam en het wachtwoord die je hebt ingevoerd komen niet overeen met ons archief. Controleer de gegevens en probeer het opnieuw.\";'),('v3h6uhlgjf5qbv3i0o40jc8cjvuubdu2','::1',1488519511,'__ci_last_regenerate|i:1488519227;user|a:4:{s:2:\"id\";i:1;s:4:\"name\";s:11:\"Tim Joosten\";s:5:\"email\";s:17:\"topairy@gmail.com\";s:8:\"username\";s:7:\"Topairy\";}permissions|a:0:{}abilities|a:0:{}');
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -606,4 +637,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-07  9:40:10
+-- Dump completed on 2017-03-09  0:41:13

@@ -33,7 +33,7 @@
 										<div class="ch-info">
 											<div class="ch-info-front ch-img-1"><i class="fa fa-male" aria-hidden="true"></i></div>
 												<div class="ch-info-back">
-													<h3><a class="scroll" href="register.html">registeer</a></h3>
+													<h3><a class="scroll" href="{{ base_url('authencation/register') }}">registeer</a></h3>
 												</div>
 											</div>
 										</div>
@@ -41,8 +41,20 @@
 								</div>
 
                                 @if ($this->user)
+                                    <div class="col-md-2 nav-grid nav-grid3">
+                                        <div class="ch-item ch-img-1">
+                                            <div class="ch-info-wrap">
+                                                <div class="ch-info">
+                                                    <div class="ch-info-front ch-img-1"><i class="fa fa-home" aria-hidden="true"></i></div>
+                                                    <div class="ch-info-back">
+                                                        <h3><a class="scroll" href="">backend</a></h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 @endif
-                                
+
 								<div class="col-md-2 nav-grid nav-grid2">
 									<div class="ch-item ch-img-2">
 										<div class="ch-info-wrap">
