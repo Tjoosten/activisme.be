@@ -1,0 +1,78 @@
+@import url("Style.css");
+@import 'variables';
+
+footer {
+  display: inline-block;
+  width: 100%;
+
+  // footer > section
+  > section {
+    text-align: center;
+
+    // footer > section > section
+    > section {
+      display: inline-block;
+      height: 175.81px;
+      height: 15em;
+      padding: 0 1.2em;
+      text-align: center;
+      vertical-align: top;
+      width: 20em;
+
+      // footer > section > section > nav > li
+      > nav > li {
+        padding-bottom: 1.2em;
+
+        // footer > section > section > nav > ul > li > a
+        > a {
+          color: $color-brown;
+          display: block;
+          font-weight: bold;
+          text-decoration: none;
+        }
+
+        // footer > section > section > nav > ul > li > a:hover
+        &:hover {
+          background: url('../images/menu-hover.png') no-repeat center;
+          color: $color-white;
+          padding: 1em;
+          transition: all .9s;
+        }
+      }
+
+      // footer > section > section > h2
+      > h2 {
+        border-bottom: .05em solid $color-white;
+        color: $color-brown;
+        font-size: 2em;
+        text-align: center;
+      }
+    }
+
+    // footer > section > h1
+    > h1 {
+      color: $color-brown;
+      font-size: 3.5em;
+      margin: 0;
+      padding: 1em 0 0;
+      text-align: center;
+      vertical-align: text-top;
+      width: 100%;
+    }
+  }
+
+  //footer > p
+  > p {
+    color: $color-white;
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+footer > section > section > nav > ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

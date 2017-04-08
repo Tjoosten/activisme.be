@@ -1,0 +1,9 @@
+linters:
+  SelectorDepth:
+    enabled: false
+  IdSelector:
+    enabled: false
+  DuplicateProperty:
+    enabled: false
+  NestingDepth:
+    enabled: false
