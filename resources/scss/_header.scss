@@ -1,64 +1,72 @@
 @import url("Style.css");
+@import 'variables';
 
 header > section {
-  display: block;
-  background-image: url("../images/header-Background.jpg");
+  background-image: url('../images/header-Background.jpg');
   background-size: cover;
+  display: block;
   text-align: center;
-}
 
-header > section > h1 {
-  display: inline-block;
-  margin-top: 1.3em;
-  color: white;
-  font-size: 4em;
-  font-weight: bold;
-  padding: 1.2em 2em;
-  border: 0.15em solid rgba(2, 0, 0, 0.40);
-  background-color: rgba(0, 0, 0, 0.30);
-}
+  // header > section > h1
+  > h1 {
+    background-color: rgba(0, 0, 0, .30);
+    border: .15em solid rgba(2, 0, 0, .40);
+    color: $color-white;
+    display: inline-block;
+    font-size: 4em;
+    font-weight: bold;
+    margin-top: 1.3em;
+    padding: 1.2em 2em;
+  }
 
-header > section > h3 {
-  display:block;
-  color: white;
-  margin: 0;
-  padding: 0;
-  padding: 0.5em 0.8em;
-  font-size: 1.5em;
-  background-color: rgba(0, 0, 0, 0.45);
+  // header > section > h3
+  > h3 {
+    background-color: rgba(0, 0, 0, .45);
+    color: $color-white;
+    display: block;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    padding: .5em .8em;
+  }
 }
 
 header > nav {
   text-align: center;
-}
 
-header > nav > ul {
-  display: inline-block;
-  padding: 1.2em 0em;
-  margin: 0;
-}
+  // header > nav > ul
+  > ul {
+    display: inline-block;
+    margin: 0;
+    padding: 1.2em 0;
 
-header > nav > ul > li {
-  display: inline-block;
-  margin: 0em 2em;
-}
+    // header > nav > ul > li
+    > li {
+      display: inline-block;
+      margin: 0 2em;
 
-header > nav > ul > li > a {
-  text-decoration: none;
-  font-size: 1.5em;
-  font-weight: bold;
-  font-style: oblique;
-  color: #A3793D;
-}
+      // header > nav > ul > li > a
+      > a {
+        color: $color-brown;
+        font-size: 1.5em;
+        font-style: oblique;
+        font-weight: bold;
+        text-decoration: none;
 
-header > nav > ul > li > a:hover {
-  transition: 0.9s;
-  border-radius: 0.8em;
-  padding: 0.2em 1em;
-  background-image: url("../images/menu-hover.png");
-  color: gold;
-}
+        // header > nav > ul > li > a:hover
+        &:hover {
+          background-image: url('../images/menu-hover.png');
+          border-radius: .8em;
+          color: $color-gold;
+          padding: .2em 1em;
+          transition: .9s;
+        }
 
-header > nav > ul > li > a:visited {
-  color: #A3793D;
+        // header > nav > ul > li > a:visited
+        &:visited {
+          color: $color-brown;
+        }
+      }
+    }
+  }
 }
