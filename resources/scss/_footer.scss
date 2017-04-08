@@ -1,0 +1,70 @@
+@import url("Style.css");
+
+footer {
+  display: inline-block;
+  width: 100%;
+}
+
+footer > section > h1 {
+  color: #A3793D;
+  width: 100%;
+  text-align: center;
+  vertical-align: text-top;
+  padding: 0;
+  margin: 0;
+  font-size: 3.5em;
+  padding-top: 1em;
+}
+
+footer > section {
+  text-align: center;
+}
+
+footer > section > section {
+  display: inline-block;
+  text-align: center;
+  height: 175.81px;
+  vertical-align: top;
+  padding: 0 1.2em;
+  width: 20em;
+  height: 15em;
+}
+
+footer > section > section > h2 {
+  color: #A3793D;
+  text-align: center;
+  border-bottom: 0.05em solid white;
+  font-size: 2em;
+}
+
+footer > section > section > nav > ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer > section > section > nav > li {
+  padding-bottom: 1.2em;
+}
+
+footer > section > section > nav > ul > li > a {
+  display: block;
+  text-decoration: none;
+  color: #A3793D;
+  font-weight: bold;
+}
+
+footer > section > section > nav > ul > li > a:hover {
+  background:url(../images/menu-hover.png) center ;
+  color:#FFE;
+  transition: all .9s;
+  padding: 1em;
+  background-repeat: no-repeat;
+}
+
+footer > p {
+  display: block;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
