@@ -33,71 +33,78 @@ main > .informatie > section:first-child {
 
 main > .informatie > section {
   display: inline-block;
-  text-align: center;
-  max-width: 80%;
   margin-left: 10%;
-}
-
-main > .informatie > section:last-child {
-  display: inline-block;
+  max-width: 80%;
   text-align: center;
-  padding-bottom: 2em;
+
+  // main > .informatie > section:last-child
+  &:last-child {
+    display: inline-block;
+    padding-bottom: 2em;
+    text-align: center;
+  }
+
+
+  // main > .informatie > section > h1
+  > h1 {
+    color: $color-black;
+    display: inline-block;
+    font-size: 3.5em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
 }
 
-main > .informatie > section > h1 {
-  display: inline-block;
-  color: $color-black;
-  text-align: center;
-  font-size: 3.5em;
-  padding: 0;
-  margin: 0;
-}
-
+//scss-lint:disable MergeableSelector
 main > .informatie > section > p {
+  border-bottom: solid .2em $color-black;
   display: inline-block;
   font-size: 1.3em;
   padding: 0 .8em;
   text-align: center;
-  border-bottom: solid .2em $color-black;
   width: 90%;
 }
 
+//scss-lint:disable MergeableSelector
 main > .informatie > section > p {
-  text-align:center;
-  font-weight: bold;
   border: 0;
+  font-weight: bold;
+  text-align: center;
 }
 
+//scss-lint:disable MergeableSelector
 main > .informatie > section > p:last-child {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 main > .sponsors {
   display: inline-block;
-  text-align: center;
-  padding: 0;
-  width: 99%;
   margin: .5%;
+  padding: 0;
+  text-align: center;
+  width: 99%;
+
+  // main > .sponsors > div
+  > div {
+    padding-bottom: 2em;
+
+    // main > .sponsors > div > img
+    > img {
+      height: 20em;
+      margin-bottom: .5%;
+      margin-left: .5%;
+      margin-right: .5%;
+      width: 20em;
+    }
+  }
 
   // main > .sponsors > h1
   > h1 {
-    display: inline-block;
     color: $color-black;
-    text-align: center;
+    display: inline-block;
     font-size: 3.5em;
-  }
-}
-
-main > .sponsors > div {
-  padding-bottom: 2em;
-
-  // main > .sponsors > div > img
-  > img {
-    height: 20em;
-    margin-bottom: .5%;
-    margin-left: .5%;
-    margin-right: .5%;
-    width: 20em;
+    text-align: center;
   }
 }

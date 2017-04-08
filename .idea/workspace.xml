@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="378e3f48-03dc-4deb-88d4-b5b01100f381" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.scss-lint.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/scss/_connection.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/scss/_crowdfund.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/scss/_footer.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/scss/_header.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/scss/_index.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/scss/_style.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/scss/_variables.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/scss/_crowdfund.scss" afterPath="$PROJECT_DIR$/resources/scss/_crowdfund.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,8 +35,8 @@
       <file leaf-file-name="_crowdfund.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/scss/_crowdfund.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="61" column="13" lean-forward="true" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+            <state relative-caret-position="421">
+              <caret line="72" column="21" lean-forward="false" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -384,7 +377,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15371000" />
+    <option name="totallyTimeSpent" value="16587000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -636,8 +629,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/scss/_crowdfund.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="61" column="13" lean-forward="true" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+        <state relative-caret-position="421">
+          <caret line="72" column="21" lean-forward="false" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
           <folding />
         </state>
       </provider>
