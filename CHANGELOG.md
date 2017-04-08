@@ -7,4 +7,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 **Server deployment 4:**
 
 - Added changelog file.
-- Added `.gitignore` file
+- Added `.gitignore` file. 
+- Added the SASS port. (can be found under `resources/scss`)
