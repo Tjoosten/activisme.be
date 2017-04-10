@@ -1,0 +1,110 @@
+@import url("Style.css");
+@import 'variables';
+
+header > section {
+  background-image: url('../images/caravanCrowdfund.jpg');
+  background-size: cover;
+  display: inline-block;
+  height: 65em;
+  width: 100%;
+
+  // header > section > h1
+  > h1 {
+    margin-top: 6.5em;
+  }
+
+  // header > section > h3
+  > h3 {
+    margin-top: 11.4em;
+  }
+}
+
+main > section {
+  background-image: url('../images/nieuws-background.jpg');
+  background-size: cover;
+  display: inline-block;
+  margin: .5%;
+  width: 99%;
+}
+
+main > .informatie > section:first-child {
+  padding-top: 2em;
+}
+
+main > .informatie > section {
+  display: inline-block;
+  margin-left: 10%;
+  max-width: 80%;
+  text-align: center;
+
+  // main > .informatie > section:last-child
+  &:last-child {
+    display: inline-block;
+    padding-bottom: 2em;
+    text-align: center;
+  }
+
+
+  // main > .informatie > section > h1
+  > h1 {
+    color: $color-black;
+    display: inline-block;
+    font-size: 3.5em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+//scss-lint:disable MergeableSelector
+main > .informatie > section > p {
+  border-bottom: solid .2em $color-black;
+  display: inline-block;
+  font-size: 1.3em;
+  padding: 0 .8em;
+  text-align: center;
+  width: 90%;
+}
+
+//scss-lint:disable MergeableSelector
+main > .informatie > section > p {
+  border: 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+//scss-lint:disable MergeableSelector
+main > .informatie > section > p:last-child {
+  margin: 0;
+  padding: 0;
+}
+
+main > .sponsors {
+  display: inline-block;
+  margin: .5%;
+  padding: 0;
+  text-align: center;
+  width: 99%;
+
+  // main > .sponsors > div
+  > div {
+    padding-bottom: 2em;
+
+    // main > .sponsors > div > img
+    > img {
+      height: 20em;
+      margin-bottom: .5%;
+      margin-left: .5%;
+      margin-right: .5%;
+      width: 20em;
+    }
+  }
+
+  // main > .sponsors > h1
+  > h1 {
+    color: $color-black;
+    display: inline-block;
+    font-size: 3.5em;
+    text-align: center;
+  }
+}

@@ -1,0 +1,147 @@
+@import url("Style.css");
+@import 'variables';
+
+main > .informatie {
+  background-image: url('../images/nieuws-background.jpg');
+  background-size: cover;
+  border-image-width: 1em;
+  display: inline-block;
+  margin: .5%;
+  padding-bottom: 2em;
+  width: 99%;
+
+  // main > .informatie > h1
+  > h1 {
+    color: $color-black;
+    font-size: 3.5em;
+    text-align: center;
+  }
+
+  // main > .informatie > section
+  > section {
+    display: inline-block;
+    margin-left: 2em;
+    max-width: 47%;
+    vertical-align: top;
+
+    // main > .informatie > section > ul
+    > ul {
+      display: block;
+
+      // main > .informatie > section > ul > li
+      > li {
+        color: $color-black;
+        font-size: 1.3em;
+        font-weight: bold;
+        list-style: square;
+      }
+    }
+
+    // main > .informatie > section > h2
+    > h2 {
+      border-bottom: .05em solid $color-black;
+      color: $color-black;
+      display: inline-block;
+      font-size: 2em;
+      margin: 0;
+      text-align: center;
+    }
+  }
+}
+
+main > .acties > section {
+  display: inline-block;
+  margin-bottom: 2em;
+  padding: 0 1.2em;
+  text-align: center;
+  vertical-align: top;
+  width: calc(86% / 4);
+
+  // main > .acties > section  > ul
+  > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    // main > .acties > section > ul > li
+    > li {
+      padding-bottom: 1.2em;
+
+      // main > .acties > section > ul > li > a
+      > a {
+        color: $color-white;
+        display: block;
+        font-weight: bold;
+        text-decoration: none;
+
+        // main > .acties > section > ul > li > a:hover
+        &:hover {
+          background: url('../images/menu-hover-wit.png') no-repeat center;
+          color: $color-white-2;
+          color: $color-slate;
+          padding: .5em;
+          transition: all .9s;
+        }
+      }
+    }
+  }
+
+  // main > .acties > section > h2
+  > h2 {
+    border-bottom: .05em solid $color-white;
+    color: $color-white;
+    font-size: 2em;
+    text-align: center;
+  }
+}
+
+main > .acties > h1 {
+  color: $color-white;
+  font-size: 3.5em;
+  padding-top: .5em;
+  text-align: center;
+}
+
+main > .agenda {
+  background-image: url('../images/nieuws-background.jpg');
+  background-size: cover;
+  display: inline-block;
+  margin: .5%;
+  padding-bottom: 2em;
+  width: 99%;
+
+  // main > .agenda > section
+  > section {
+    display: inline-block;
+    margin-left: 10%;
+    max-width: 80%;
+
+    // main > .agenda > section
+    > h2 {
+      font-size: 2em;
+      text-align: center;
+    }
+
+    // main > .agenda > section > p
+    > p {
+      font-size: 1.3em;
+      font-weight: bold;
+      padding: 0 .8em;
+      text-align: center;
+
+      // main > .agenda > section > p:last-child
+      &:last-child {
+        font-weight: bold;
+        padding-bottom: 1em;
+        text-align: center;
+      }
+    }
+  }
+
+  // main > .agenda > h1
+  > h1 {
+    color: $color-black;
+    font-size: 3.5em;
+    text-align: center;
+  }
+}
