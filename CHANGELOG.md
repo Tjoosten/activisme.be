@@ -12,4 +12,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added the `package.json`
 - Remove the `.idea` folder and placed them in de `.gitignore`
 - Added the readme file on the repository. 
-- Added the .editorconfig file. sss
+- Added the .editorconfig file.
+- Fix bug with facebook sharing. 
