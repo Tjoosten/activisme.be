@@ -1,0 +1,27 @@
+{
+    "name": "activismebe/kickstart",
+    "description": "Kickstart template for new Activisme_BE systems",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tim Joosten",
+            "email": "Tjoosten3@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "robmorgan/phinx": "^0.8.0",
+        "illuminate/database": "5.4",
+        "illuminate/events": "5.4",
+        "symfony/var-dumper": "^3.2"
+    },
+    "autoload": {
+        "classmap": [
+            "application/core",
+            "application/models",
+            "application/libraries"
+        ]
+    }
+}
