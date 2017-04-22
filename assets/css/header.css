@@ -51,14 +51,14 @@ header > nav > ul > li > a {
     color: #A3793D;
 }
 
+header > nav > ul > li > a:visited {
+    color: #A3793D;
+}
+
 header > nav > ul > li > a:hover {
     transition: 0.9s;
     border-radius: 0.8em;
     padding: 0.2em 1em;
     background-image: url("../images/menu-hover.png");
     color: gold;
-}
-
-header > nav > ul > li > a:visited {
-    color: #A3793D;
 }
