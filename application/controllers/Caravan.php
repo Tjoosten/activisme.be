@@ -1,17 +1,20 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
+/**
+ * Class: Caravan
+ */
 class Caravan extends MY_Controller
 {
-	public $user        = [];
-	public $abilities   = [];
-	public $permissions = [];
-	
+	public $user        = []; /** @var array|mixed $user           The authencated user information session. */
+	public $abilities   = []; /** @var array|mixed $abilities      The authencated user abilities session.   */
+	public $permissions = []; /** @var array|mixed $permissions    The authencated user permission session.  */
+
 	/**
 	 * Caravan constructor
 	 *
 	 * @return void
 	 */
-	public function __construct() 
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->library(['session', 'blade']);
@@ -24,10 +27,10 @@ class Caravan extends MY_Controller
 
 	/**
 	 * Get the crowdfund index.
-	 * 
+	 *
 	 * @return blade view.
 	 */
-	public function index() 
+	public function index()
 	{
 		$data['title'] = 'Caravan';
 
