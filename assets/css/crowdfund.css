@@ -89,7 +89,7 @@ main > .sponsors > div {
     padding-bottom: 2em;
 }
 
-main > .sponsors > div > img {
+main > .sponsors > div > a > img {
     height: 20em;
     width: 20em;
     margin-left: 0.5%;
