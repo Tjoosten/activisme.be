@@ -31,7 +31,7 @@
             </p>
         </section>
         <section>
-            <h1>Le caravane du paix et de mendier</h1>
+            <h1>La caravane de la paix et de mendier</h1>
             <p>
                 Récemment, nous avons acheté une vieille caravane, qui sera utilisé pour joindre plusieurs actions, comme les vêtements, des couvertures, de la nourriture et de la soupe à aller mendier dans tout le pays aux plus démunis et sans abri. Nous allons utiliser la caravane à des fins différentes, l'intérieur sera également entièrement personnalisé de sorte qu'il se compose d'unités mobiles, qui sont faciles à déplacer, selon l'objectif que nous effectuons. Puisque nous opérons sans subventions ou des aides d'État, tout don est le bienvenu
                 Le compte pour nous soutenir :.
