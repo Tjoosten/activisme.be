@@ -160,13 +160,14 @@ class Users extends MY_Controller
 	 * @return Redirect
 	 */
 	public function delete()
-	{
-		// TODO: Add method to detacj the permissions, and abilities.
-		
+	{		
 		$user = Authencate::find($this->security->xss_clean($this->uri->segment(3)));
 
 		if ((int) count($user) === 1) {
 			if ($user->delete()) {
+				$user->permissions()->sync([]);
+				$user->abilities()->sync([]);
+
 				$this->session->set_flashdata('class', 'alert alert-success');
 				$this->session->set_flashdata('message', 'De gebruiker is verwijderd.');
 			}
