@@ -88,7 +88,6 @@ main > .acties > section > ul > li > a:hover {
     color: #FFE;
     transition: all .9s;
     background-repeat: no-repeat;
-    padding: 0.5em;
     color: darkslategray;
 }
 
