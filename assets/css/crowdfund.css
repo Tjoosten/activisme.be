@@ -43,6 +43,10 @@ main > section {
     background-size: cover;
     width: 99%;
     margin: 0.5%;
+    border-bottom: solid #4c4b4b 0.5em;
+    border-left: solid #2f2e2e 0.5em;
+    border-top: solid #4c4b4b 0.5em;
+    border-right: solid #2f2e2e 0.5em;
 }
 
 main > .informatie > section:first-child {
