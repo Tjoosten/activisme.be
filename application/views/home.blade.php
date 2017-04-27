@@ -48,7 +48,7 @@
                     <h2>Petities</h2>
                     <ul>
 						@if ((int) count($petitions) === 0)
-							<li>{{ strtoupper('Geen petities.') }}</li>
+							<li><a href="#">{{ strtoupper('Geen petities.') }}</a></li>
 						@else
 							@foreach ($petitions as $petition)
 								<li><a href="{{ $petition->link }}" target="blank">{{ strtoupper($petition->name) }}</a></li>
@@ -60,7 +60,7 @@
                     <h2>Mailingacties</h2>
                     <ul>
                         @if ((int) count($mailingActions) === 0)
-							<li>{{ strtoupper('Geen acties.') }}</li>
+							<li><a href="#">{{ strtoupper('Geen acties.') }}</a></li>
 						@else
 							@foreach ($mailingActions as $mailing)
 								<li><a href="{{ $mailing->link }}" target="blank">{{ strtoupper($mailing->name) }}</a></li>
