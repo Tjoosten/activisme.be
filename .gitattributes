@@ -12,3 +12,5 @@
 /package.json		export-ignore
 /phinx.yml			export-ignore
 /phpstorm.php		export-ignore
+/Gulpfile.js		export-ignore
+/resources			export-ignore
