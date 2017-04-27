@@ -5,7 +5,7 @@
     <title>Activisme | Tom Manhaeghe</title>
     <link rel="stylesheet" href="{{ base_url('assets/css/header.css') }}"/>
     <link rel="stylesheet" href="{{ base_url('assets/css/footer.css') }}"/>
-    <link rel="stylesheet" href="{{ base_url('assets/css/crowdfund.css') }}"/>
+    <link rel="stylesheet" href="{{ base_url('assets/css/caravan.css') }}"/>
 </head>
 <body>
 <header>
