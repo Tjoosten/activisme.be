@@ -84,10 +84,8 @@ main > .acties > section > ul > li > a {
 }
 
 main > .acties > section > ul > li > a:hover {
-    background: url(../images/menu-hover-wit.png) center ;
-    color: #FFE;
+    background: url(../images/menu-hover-wit.png) center no-repeat;
     transition: all .9s;
-    background-repeat: no-repeat;
     color: darkslategray;
 }
 
