@@ -65,9 +65,9 @@
         <h1>Sponsors</h1>
         {{-- grouping the images, Readers don't have to say images are grouped, important it tells what's on the image. --}}
         <div>
-			<img src="{{ base_url('assets/images/Vrede.jpg') }}" class="block-vrede" alt="Vrede.be">
-            <img src="{{ base_url('assets/images/AkzoNobelTormorrowsAnswersToday.jpg') }}" alt="AkzoNobel Tormorrow's Answers Today"/>
-            <img src="{{ base_url('assets/images/GarageTeirlynckWaregem.jpg') }}" alt="Garage Teirlynck Waregem"/>
+			<a href="http://www.vrede.be"><img src="{{ base_url('assets/images/Vrede.jpg') }}" alt="Vrede.be"></a>
+            <a href="https://www.akzonobel.com/nl/"><img src="{{ base_url('assets/images/AkzoNobelTormorrowsAnswersToday.jpg') }}" alt="AkzoNobel Tormorrow's Answers Today"/></a>
+            <a href="http://www.garageteirlynck.be/"><img src="{{ base_url('assets/images/GarageTeirlynckWaregem.jpg') }}" alt="Garage Teirlynck Waregem"/></a>
         </div>
     </section>
 </main>

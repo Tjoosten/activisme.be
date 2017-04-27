@@ -14,7 +14,7 @@ class Volunteer extends MY_controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->library(['blade', 'session', 'form_validation']);
+        $this->load->library(['blade', 'session', 'form_validation', 'email']);
         $this->load->helper(['url']);
 
         $this->user        = $this->session->userdata('user');
@@ -83,7 +83,30 @@ class Volunteer extends MY_controller
         $input['city_id']     = $this->input->post('city_id');
         // $input['information'] = $this->input->post('information');
 
-        if (Vrijwilligers::create($this->security->xss_clean($input))) { // Record has been inserted.
+        if ($volunteer = Vrijwilligers::create($this->security->xss_clean($input))) { // Record has been inserted.
+            $new['volunteer'] = Vrijwilligers::with(['cities.province'])->where('id', $volunteer->id)->first()->get();
+
+            // Send e-mail about the new volunteer.
+            $emailConf['protocol']      = 'smtp';
+            $emailConf['smtp_host']     = 'send.one.com';
+            $emailConf['smtp_user']     = '';
+            $emailConf['smtp_pass']     = '';
+            $emailConf['smtp_port']     = 465;
+            $emailConf['smtp_crypto']   = 'ssl';
+            $emailConf['authencation']  = true;
+
+            $this->email->initialize($emailConf);
+
+            $this->email->from('noreply@activisme.be');
+            $this->email->to('vrijwilligers@activisme.be');
+            $this->email->subject('Activisme_BE | Nieuwe vrijwilliger');
+            $this->email->message($this->load->view('volunteers/email/new'));
+            $this->email->set_mailtype('html');
+
+            $this->email->send();
+            $this->email->clear();
+
+            // Set flash data output.
             $this->session->set_flashdata('class', 'alert alert-success');
             $this->session->set_flashdata('message', 'Wij danken je voor je intresse.');
         }
