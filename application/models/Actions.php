@@ -22,7 +22,7 @@ class Actions extends Model
      *
      * @return array
      */
-    protected $fillable = ['author_id', 'type_id', 'link', 'name'];
+    protected $fillable = ['author_id', 'type_id', 'link', 'name', 'end_date'];
 
 	/**
 	 * Type relationship.

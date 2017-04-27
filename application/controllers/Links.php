@@ -45,6 +45,7 @@ class Links extends MY_Controller
         $this->form_validation->set_rules('name', 'Naam link', 'trim|required');
         $this->form_validation->set_rules('link', 'Hyperlink', 'trim|required');
         $this->form_validation->set_rules('type_id', 'Type link', 'trim|required');
+        $this->form_validation->set_rules('end_date', 'Eind datum actie', 'trim|required');
 
         if ($this->form_validation->run() === false) { // Validation fails.
             $data['title'] = 'Backend';
@@ -59,6 +60,7 @@ class Links extends MY_Controller
         $input['link']      = $this->input->post('link');
         $input['author_id'] = $this->user['id'];
         $input['type_id']   = $this->input->post('type_id');
+        $input['end_date']  = strtotime($this->input->post('end_date'));
 
         if (Actions::create($this->security->xss_clean($input))) { // Row is inserted
             $this->session->set_flashdata('class', 'alert alert-success');

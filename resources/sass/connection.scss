@@ -1,0 +1,32 @@
+@import url("style.css");
+
+main > form {
+    display: inline-block;
+    width: 99%;
+    text-align: center;
+    padding-bottom: 3em;
+    background-image: url("../images/nieuws-background.jpg");
+    background-size: cover;
+    margin: 0.5%;
+}
+
+main > form > h1 {
+    color: black;
+    text-align: center;
+    font-size: 3.5em;
+}
+
+main > form > section {
+    text-align: center;
+}
+
+main > form > section > label {
+    display: inline-block;
+    width: 10em;
+    text-align: left;
+    color: black;
+}
+
+main > form > section > #submit {
+    width: 11.5em;
+}

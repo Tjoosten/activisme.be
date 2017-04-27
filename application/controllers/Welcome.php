@@ -38,11 +38,11 @@ class Welcome extends CI_Controller
 
 		// Data variables;
 		$data['title']          = 'Index';
-		$data['mailingActions'] = Actions::where('type_id', $relMailing->id)->get();
-		$data['links']			= Actions::where('type_id', $relLinks->id)->get();
-		$data['petitions']		= Actions::where('type_id', $relPetitions->id)->get();
-		$data['crowdfunds']     = Actions::where('type_id', $relCrowdfund->id)->get();
-		$data['manifestations'] = Actions::where('type_id', $relManifestation->id)->get();
+		$data['mailingActions'] = Actions::where('type_id', $relMailing->id)->orderBy('end_date', 'ASC')->get();
+		$data['links']			= Actions::where('type_id', $relLinks->id)->orderBy('end_date', 'ASC')->get();
+		$data['petitions']		= Actions::where('type_id', $relPetitions->id)->orderBy('end_date', 'ASC')->get();
+		$data['crowdfunds']     = Actions::where('type_id', $relCrowdfund->id)->orderBy('end_date', 'ASC')->get();
+		$data['manifestations'] = Actions::where('type_id', $relManifestation->id)->orderBy('end_date', 'ASC')->get();
 
 		return $this->blade->render('home', $data);
 	}

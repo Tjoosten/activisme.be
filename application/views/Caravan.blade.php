@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+	{{-- Facebook implementation --}}
+	<meta property="fb:app_id" 		content="1658071114490262" />
+	<meta property="og:url" 		content="http://www.activisme.be/Caravan">
+	<meta property="og:type" 		content="article" />
+	<meta property="og:title" 		content="De bedeel caravan." />
+	<meta property="og:description" content="Recent hebben we een oude caravan aangekocht, die gebruikt zal worden om verscheidene acties mee te doen, zoals kledij, dekens ,soep en voeding te gaan bedelen over het hele land aan de minderbedeelden en daklozen. Daar we de caravan voor verschillende doeleinden zullen gebruiken, zal het interieur ook volledig moeten aangepast worden, zodat deze uit mobiele eenheden bestaan, die gemakkelijk te verplaatsen zijn, volgens het doel dat we uitvoeren." />
+	<meta property="og:image" 		content="http://www.activisme.be/assets/images/caravanCrowdfund.jpg" />
+
     <title>Activisme | Tom Manhaeghe</title>
+
     <link rel="stylesheet" href="{{ base_url('assets/css/header.css') }}"/>
     <link rel="stylesheet" href="{{ base_url('assets/css/footer.css') }}"/>
-    <link rel="stylesheet" href="{{ base_url('assets/css/crowdfund.css') }}"/>
+    <link rel="stylesheet" href="{{ base_url('assets/css/caravan.css') }}"/>
 </head>
 <body>
 <header>
@@ -31,7 +41,7 @@
             </p>
         </section>
         <section>
-            <h1>Le caravane du paix et de mendier</h1>
+            <h1>La caravane de la paix et de mendier</h1>
             <p>
                 Récemment, nous avons acheté une vieille caravane, qui sera utilisé pour joindre plusieurs actions, comme les vêtements, des couvertures, de la nourriture et de la soupe à aller mendier dans tout le pays aux plus démunis et sans abri. Nous allons utiliser la caravane à des fins différentes, l'intérieur sera également entièrement personnalisé de sorte qu'il se compose d'unités mobiles, qui sont faciles à déplacer, selon l'objectif que nous effectuons. Puisque nous opérons sans subventions ou des aides d'État, tout don est le bienvenu
                 Le compte pour nous soutenir :.

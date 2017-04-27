@@ -101,6 +101,16 @@
                                     <input type="text" name="link" placeholder="Link naar actie of organisatie" class="form-control">
                                 </div>
                             </div>
+
+							<div class="form-group">
+								<label for="end_date" class="col-md-3 control-label">
+									Eind datum: <span class="text-danger">*</span>
+								</label>
+
+								<div class="col-md-9">
+									<input type="date" name="end_date" placeholder="Eind datum v/d actie" class="form-control">
+								</div>
+							</div>
                         </form>
                     </div>
 
