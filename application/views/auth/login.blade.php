@@ -32,8 +32,8 @@
                 <input type="password" id="password" name="password" placeholder="Password"/>
             </section>
             <section>
-                <label for="submit">Registreer</label>
-                <input type="submit" id="submit" value="Registreer"/>
+                <label for="submit">Log-in</label>
+                <input type="submit" id="submit" value="Log-in"/>
             </section>
         </form>
     </main>
