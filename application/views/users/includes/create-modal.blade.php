@@ -8,7 +8,7 @@
 			</div>
 
 			<div class="modal-body">
-				<form class="form-horizontal" action="" method="POST" id="user">
+				<form class="form-horizontal" action="{{ site_url('users/store') }}" method="POST" id="user">
 					{{-- TODO: Implement csrf token --}}
 
 					<fieldset>

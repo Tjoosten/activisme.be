@@ -155,6 +155,56 @@ class Users extends MY_Controller
 	}
 
 	/**
+	 * Store a new user in the system.
+	 *
+	 * @return Blade view | Response
+	 */
+	public function store()
+	{
+		$this->form_validation->set_rules('name', 'Naam', 'trim|required');
+		$this->form_validation->set_rules('username', 'Gebruikersnaam', 'trim|required|is_unique[users.username]');
+		$this->form_validation->set_rules('email', 'E-mail adres', 'trim|required|valid_email|is_unique[users.email]');
+		$this->form_validation->set_rules('password', 'Wachtwoord', 'trim|required|matches[password_confirmation]');
+		$this->form_validation->set_rules('password_confirmation', 'Wachtwoord bevestiging', 'trim|required');
+
+		if ($this->form_validation->run() === false) { // Form validation fails.
+			dump(validation_errors()); 	// For debugging propose.
+			die();						// For debugging propose.
+
+			$this->session->set_flashdata('class', 'alert alert-danger');
+			$this->session->set_flashdata('message', 'Kon de gebruiker niet toevoegen.');
+
+			return redirect(site_url('users'));
+		}
+
+		// No validation errors move on with )our insert logic.
+		$input['name'] 		= $this->input->post('name', true);
+		$input['username']	= $this->input->post('username', true);
+		$input['email']		= $this->input->post('email', true);
+		$input['password']  = md5($this->input->post('password', true));
+
+		if ($newUser = Authencate::create($input)) { // User is created
+			$acl['permissions']	= $this->input->post('permissions', true);
+			$acl['abilities'] 	= $this->input->post('abilities', true);
+
+			if (! empty($acl['permissions'])) { // Permîssions are given.
+				Authencate::find($newUser->id)->permissions()->attach($acl['permissions']);
+			}
+
+			if (! empty($acl['abilities'])) { // Abilities are given.
+				Authencate::find($newUser->id)->abilities()->attach($acl['abilities']);
+			}
+
+			// Flash message
+			$this->session->set_flashdata('class', 'alert alert-success');
+			$this->session->set_flashdata('message', 'De gebruiker is toegevoegd.');
+		}
+
+
+		return redirect($_SERVER['HTTP_REFERER']);
+	}
+
+	/**
 	 * Delete an account in the system.
 	 *
 	 * @return Redirect
