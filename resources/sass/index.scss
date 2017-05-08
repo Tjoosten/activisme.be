@@ -20,6 +20,21 @@ main > .informatie > h1 {
     font-size: 3.5em;
 }
 
+main > .informatie > article {
+    display: inline-block;
+    text-align: center;
+}
+
+main > .informatie > article > p {
+    display: inline-block;
+    max-width: 94%;
+    list-style: square;
+    text-align: center;
+    color: black;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
 main > .informatie > section {
     display: inline-block;
     max-width: 47%;
