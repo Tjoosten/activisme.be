@@ -5,7 +5,7 @@ main > .informatie {
     background-size: cover;
     background-image: url("../images/nieuws-background.jpg");
     border-image-width: 1em;
-    width: 99%;
+    width: calc(99% - 1em);
     margin: 0.5%;
     padding-bottom: 2em;
     border-bottom: solid #4c4b4b 0.5em;
@@ -112,7 +112,7 @@ main > .agenda {
     display: inline-block;
     background-image: url("../images/nieuws-background.jpg");
     background-size: cover;
-    width: 99%;
+    width: calc(99% - 1em);
     margin: 0.5%;
     padding-bottom: 2em;
     border-bottom: solid #4c4b4b 0.5em;
