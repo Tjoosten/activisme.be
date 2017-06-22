@@ -21,6 +21,23 @@
         <main>
             <section class="informatie">
                 <h1>Over ons</h1>
+                <article>
+                    <p>
+                        Met ons klein team dat opkomt voor wereldvrede en de rechten van de mens, gebruiken we deze website, activisme.be, als uitvalsbasis. Activisme.be wil een platform bieden om mensen en organisaties samen te brengen en vanuit een verenigd front te strijden voor onze belangen die nu maar al te vaak op de helling worden gezet.
+                        Naast zichtbare aanwezigheid op tal van demonstraties, parades en betogingen, organiseren wij zelf ook straatacties en ludieke (protest)acties. De website activisme.be is de plaats bij uitstek waar we ruchtbaarheid kunnen geven aan deze acties, betogingen en demonstraties.
+                        <br><br>
+                        Daarnaast leggen we via activisme.be online petities en petitielijsten aan, die wijds kunnen uitgestuurd worden naar onze achterban. Andere organisaties en bewegingen kunnen gratis gebruik maken van dit platform om petities voor de goede zaak op te stellen en te verspreiden.
+                        <br><br>
+                        Om dit alles draaiende te houden, de website up to date te houden, de petities op te stellen en de deur uit te krijgen, hebben we jullie hulp nodig. Aangezien we zonder enige subsidie of overheidssteun werken, is elke gift, hoe klein ook, welkom. Deze giften zullen integraal gebruikt worden om ons webteam te ondersteunen, zodat activisme.be langzaamaan kan uitgroeien tot een platform dat gebruikt kan worden om het beleid, de politici en iedereen die meewerkt aan een samenleving waar steeds meer mensen naar de marge worden verwezen, op het matje en tot verantwoording te roepen.
+                        <br><br>
+                        Het rekeningnummer om ons vrijblijvend te steunen:<br>
+                        Belfius<br>
+                        IBAN: BE42 0636 1795 9854<br>
+                        BIC: GKCC BE BB<br>
+                        Met vermelding: Ik steun activisme.be
+                    </p>
+                </article>
+                <h1>Kort overzicht</h1>
                 <section>
                     <h2>Wie zijn we?</h2>
                     <ul>
